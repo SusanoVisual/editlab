@@ -117,7 +117,8 @@ h3{font:800 21px/1.2 var(--display);letter-spacing:-.015em;margin:0 0 8px}
 /* courses */
 .courses{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
 .course{grid-column:span 2;display:flex;flex-direction:column;padding:clamp(22px,2.6vw,30px)}
-.course:nth-child(n+4){grid-column:span 3}
+.course.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 clamp(24px,4vw,56px);align-items:end}
+.course.wide .learn{margin-top:0}
 .course .head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
 .ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--green-deep);box-shadow:inset 0 0 0 1px var(--green-line);color:var(--green)}
 .ico svg{width:28px;height:28px}
@@ -138,6 +139,7 @@ h3{font:800 21px/1.2 var(--display);letter-spacing:-.015em;margin:0 0 8px}
 .chan{padding:0;overflow:hidden}
 .chan .name{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line);font-weight:700}
 .chan .name span:first-child::before{content:"# ";color:var(--muted)}
+.chan .name span.plain::before{content:none}
 .post{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;padding:16px 18px}
 .post + .post{border-top:1px solid var(--line)}
 .av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:800 13px/1 var(--display);background:var(--panel-2);color:var(--muted);overflow:hidden}
@@ -259,8 +261,8 @@ footer a{text-underline-offset:3px}
   .links.open a:first-child{border-top:0}
   .hero .wrap,.comm,.founder,.pay{grid-template-columns:1fr}
   .courses{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .course,.course:nth-child(n+4){grid-column:auto}
-  .course:last-child{grid-column:1/-1}
+  .course{grid-column:auto}
+  .course.wide{grid-column:1/-1}
   .flow{grid-template-columns:1fr;gap:0;margin-left:13px}
   .flow li{padding:0 0 24px 30px}
   .flow li::before{left:0;right:auto;top:0;bottom:0;width:2px;height:auto}
@@ -275,7 +277,8 @@ footer a{text-underline-offset:3px}
   h1 .go{display:inline}
   h1 .go + .go::before{content:" "}
   .courses,.tiers,.pv,.fit{grid-template-columns:1fr}
-  .course:last-child{grid-column:auto}
+  .course.wide{grid-column:auto;display:flex}
+  .course.wide .learn{margin-top:auto}
   .hero .wrap{gap:26px;padding-block:30px 44px}
   h1{margin-bottom:18px}
   .lede{margin-bottom:22px}
@@ -349,21 +352,40 @@ footer a{text-underline-offset:3px}
 <!-- ======================= COURSES ======================= -->
 <section class="sec" id="courses">
   <div class="wrap">
-    <h2>Five courses, built in the open</h2>
-    <p class="intro">Every course below is in production. Lessons are released to Full Lab members as each one is finished, and nothing here is marked ready before it is.</p>
+    <h2>Seven courses, built in the open</h2>
+    <p class="intro">Every course below is in production. Lessons are released on Whop to Full Lab members as each one is finished, and nothing here is marked ready before it is.</p>
     <div class="courses">
+      <article class="card course wide">
+        <div>
+          <div class="head">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="15" width="10" height="10" rx="1.5"/><rect x="15" y="15" width="10" height="10" rx="1.5"/><rect x="9" y="3" width="10" height="10" rx="1.5"/></svg></span>
+            <span class="status">In production</span>
+          </div>
+          <h3>Basics</h3>
+          <p class="topic">Start here. The editing principles every other course builds on, in any software.</p>
+        </div>
+        <div>
+          <p class="learn">You will learn to</p>
+          <ul>
+            <li>Organise footage and projects so nothing gets lost</li>
+            <li>Cut with pacing, rhythm and a strong hook</li>
+            <li>Get sound and color clean, and export the right file for every platform</li>
+          </ul>
+        </div>
+      </article>
+
       <article class="card course">
         <div class="head">
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="7" width="9" height="5" rx="1.5"/><rect x="16" y="7" width="9" height="5" rx="1.5"/><rect x="3" y="16" width="14" height="5" rx="1.5"/><path d="M14 3v22"/></svg></span>
           <span class="status">In production</span>
         </div>
         <h3>Premiere Pro</h3>
-        <p class="topic">Editing from an empty project to a finished video a client can publish.</p>
+        <p class="topic">From an empty project to a finished short and a YouTube video, the way Susano edits for clients.</p>
         <p class="learn">You will learn to</p>
         <ul>
-          <li>Set up and organise a project so the edit stays fast</li>
-          <li>Cut, pace and sound-design a full video</li>
-          <li>Export correctly for YouTube and short-form</li>
+          <li>Set up projects, sequences and shortcuts for fast cutting</li>
+          <li>Edit a short from rough cut to captions and sound design</li>
+          <li>Structure a YouTube video and finish it with color and export</li>
         </ul>
       </article>
 
@@ -373,12 +395,27 @@ footer a{text-underline-offset:3px}
           <span class="status">In production</span>
         </div>
         <h3>After Effects</h3>
-        <p class="topic">Motion graphics for editors: text, captions and the effects clients ask for.</p>
+        <p class="topic">The tool itself: compositions, keyframes, text, tracking and expressions.</p>
         <p class="learn">You will learn to</p>
         <ul>
-          <li>Animate text, captions and simple graphics</li>
-          <li>Use keyframes and easing so motion feels smooth</li>
-          <li>Build reusable templates for client work</li>
+          <li>Use keyframes and the graph editor so motion feels smooth</li>
+          <li>Animate text, track motion and rotoscope</li>
+          <li>Work faster with expressions, templates and Dynamic Link</li>
+        </ul>
+      </article>
+
+      <article class="card course">
+        <div class="head">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="19" cy="14" r="6"/><path d="M3 9h8M3 14h6M3 19h8"/></svg></span>
+          <span class="status">In production</span>
+        </div>
+        <h3>Motion Graphics</h3>
+        <p class="topic">Motion design in After Effects, learned through real projects.</p>
+        <p class="learn">You will learn to</p>
+        <ul>
+          <li>Use timing, spacing and easing like a motion designer</li>
+          <li>Build kinetic type, a captions template, logo animations and lower thirds</li>
+          <li>Take a 30-second promo from script to export</li>
         </ul>
       </article>
 
@@ -387,13 +424,13 @@ footer a{text-underline-offset:3px}
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M14 3l10 5.5v11L14 25 4 19.5v-11z"/><path d="M4 8.5L14 14l10-5.5M14 14v11"/></svg></span>
           <span class="status">In production</span>
         </div>
-        <h3>Blender</h3>
+        <h3>3D (Blender)</h3>
         <p class="topic">3D for editors, for the shots that flat footage can't give you.</p>
         <p class="learn">You will learn to</p>
         <ul>
           <li>Find your way around Blender as an editor</li>
-          <li>Build and light simple 3D scenes and product shots</li>
-          <li>Bring 3D renders into your edits</li>
+          <li>Model, light and render a product shot</li>
+          <li>Put 3D titles and objects into real footage</li>
         </ul>
       </article>
 
@@ -417,7 +454,7 @@ footer a{text-underline-offset:3px}
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h10l10 10-10 10L4 14z"/><circle cx="9.5" cy="9.5" r="1.8" fill="currentColor" stroke="none"/></svg></span>
           <span class="status">In production</span>
         </div>
-        <h3>Pricing and Personal Branding</h3>
+        <h3>Pricing and Branding</h3>
         <p class="topic">What to charge, and how to present your work so the right clients find you.</p>
         <p class="learn">You will learn to</p>
         <ul>
@@ -446,7 +483,7 @@ footer a{text-underline-offset:3px}
 
     <div class="pv" aria-label="Preview of a lesson and a feedback thread">
       <div class="card chan">
-        <div class="name"><span>full-course</span><span class="status">Preview</span></div>
+        <div class="name"><span class="plain">Courses on Whop</span><span class="status">Preview</span></div>
         <div class="post">
           <span class="av"><img src="assets/logo.png" alt="" width="36" height="36"></span>
           <div>
@@ -481,7 +518,7 @@ footer a{text-underline-offset:3px}
         </div>
       </div>
     </div>
-    <p class="fine">Preview only. This shows how a lesson and a feedback thread are planned to look inside Discord. The lesson, files and messages above are illustrations, and lesson videos and project files are still in production. Feedback from Susano in #pro-feedback is open to Full Lab members now.</p>
+    <p class="fine">Preview only. This shows how a lesson on Whop and a feedback thread on Discord are planned to look. The lesson, files and messages above are illustrations, and lesson videos and project files are still in production. Feedback from Susano in #pro-feedback is open to Full Lab members now.</p>
   </div>
 </section>
 
@@ -516,7 +553,7 @@ footer a{text-underline-offset:3px}
         </div>
         <div>
           <h3>Course and feedback</h3>
-          <p>Lessons are released in #full-course. In #pro-feedback you post an edit and Susano replies with notes. #academy-access explains where everything is, and #full-lab-support is for membership questions.</p>
+          <p>Lessons are watched on Whop, and #full-course announces each new one. In #pro-feedback you post an edit and Susano replies with notes. #academy-access explains where everything is, and #full-lab-support is for membership questions.</p>
         </div>
         <div>
           <h3>Client Hunter</h3>
@@ -586,7 +623,7 @@ footer a{text-underline-offset:3px}
           <li>Everything in free<span class="status now">Now</span></li>
           <li>Feedback on your edits from Susano<span class="status now">Now</span></li>
           <li>Client Hunter feed of paid job posts<span class="status now">Now</span></li>
-          <li>All five courses<span class="status">In production</span></li>
+          <li>All seven courses<span class="status">In production</span></li>
           <li>Project files for lessons<span class="status">In production</span></li>
         </ul>
         <a class="btn solid" href="https://whop.com/checkout/plan_yFOUX2flfbL73/">Join Full Lab</a>
@@ -601,7 +638,7 @@ footer a{text-underline-offset:3px}
       <ol>
         <li><b>Pay on Whop.</b> Press Join Full Lab and pay by card. Founding members enter FOUNDING40.</li>
         <li><b>Connect Discord.</b> After paying, Whop shows a Discord page. Press Connect Account and pick your Discord account.</li>
-        <li><b>Open Full Lab.</b> Your Full Lab Member role is added and the private channels appear in the EditLab server.</li>
+        <li><b>Open Full Lab.</b> The courses open in your Whop account, your Full Lab Member role is added, and the private channels appear in the EditLab server.</li>
       </ol>
     </div>
     <p class="fine">Cancel anytime in your Whop account. Access runs until the end of the period you paid for. A question or a problem with payment? Open a ticket in #support on the EditLab Discord.</p>
@@ -640,7 +677,7 @@ footer a{text-underline-offset:3px}
     <div class="faq">
       <details>
         <summary>Are the courses finished?</summary>
-        <p>No. All five are in production, and lessons are released as each one is done. That is why the first 20 members get the founding price.</p>
+        <p>No. All seven are in production, and lessons are released on Whop as each one is done. That is why the first 20 members get the founding price.</p>
       </details>
       <details>
         <summary>What do I get today if I become a Full Lab member?</summary>
@@ -656,7 +693,7 @@ footer a{text-underline-offset:3px}
       </details>
       <details>
         <summary>How do I pay for Full Lab?</summary>
-        <p>Press <a href="https://whop.com/checkout/plan_yFOUX2flfbL73/">Join Full Lab</a> and pay by card on Whop. Then press Connect Account on the Discord page Whop shows you, and the Full Lab channels unlock. If anything goes wrong, open a ticket in #support on the EditLab Discord.</p>
+        <p>Press <a href="https://whop.com/checkout/plan_yFOUX2flfbL73/">Join Full Lab</a> and pay by card on Whop. The courses open in your Whop account right away. Then press Connect Account on the Discord page Whop shows you, and the Full Lab channels unlock. If anything goes wrong, open a ticket in #support on the EditLab Discord.</p>
       </details>
       <details>
         <summary>Can I cancel?</summary>
