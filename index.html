@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EditLab Academy | Learn video editing and get paid for it</title>
+<meta name="description" content="EditLab is a video editing academy on Discord. Join free for resources and help, or become a Full Lab member for courses as they are released, feedback on your edits and a feed of paid editing job posts.">
+<meta name="theme-color" content="#0a0b0a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EditLab Academy">
+<meta property="og:title" content="EditLab Academy: learn video editing and get paid for it">
+<meta property="og:description" content="Courses in production, feedback on your edits and a feed of paid editing job posts. Free to join on Discord.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://susanovisual.github.io/editlab/">
+<meta property="og:url" content="https://susanovisual.github.io/editlab/">
+<meta property="og:image" content="https://susanovisual.github.io/editlab/assets/social.jpg">
+<meta property="og:image:width" content="1200"> <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EditLab Academy: learn to edit, get paid for it">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://susanovisual.github.io/editlab/assets/social.jpg">
+<link rel="icon" type="image/png" href="assets/icon-64.png">
+<link rel="preload" href="assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Montserrat";src:url("assets/fonts/montserrat-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url("assets/fonts/instrument-sans-latin-wght-normal.woff2") format("woff2");font-weight:400 700;font-display:swap}
+
+/* Same tokens as the Editing DM Guide, so the two pages read as one brand. */
+:root{
+  --bg:#0a0b0a;--panel:#111410;--panel-2:#191d17;--line:#272d24;
+  --green:#a9f227;--lime:#d4fb2a;--green-deep:#14230b;--green-line:#33561a;
+  --text:#f2f5ec;--muted:#a2ac9b;
+  --display:"Montserrat","Arial Black",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --nav-h:62px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0 0 1em}
+ul,ol{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(18px,4vw,44px)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--green);color:#0a0b0a;padding:10px 14px;border-radius:8px;font-weight:700;z-index:50}
+.skip:focus{left:12px}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:20;background:rgba(10,11,10,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:clamp(14px,3vw,30px);height:var(--nav-h)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
+.brand img{width:34px;height:34px;border-radius:9px}
+.brand b{font:800 17px/1 var(--display);letter-spacing:-.01em}
+.brand span{color:var(--muted);font-size:14.5px}
+.links{display:flex;gap:24px;margin-left:auto;font-size:14.5px;font-weight:600}
+.links a{text-decoration:none;color:var(--muted);padding:6px 0}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:700 15px/1 var(--body);text-decoration:none;border-radius:999px;padding:14px 22px;border:1px solid transparent;white-space:nowrap;cursor:pointer}
+.btn.solid{background:var(--green);color:#0a0b0a}
+.btn.solid:hover{background:var(--lime)}
+.btn.ghost{border-color:var(--line);color:var(--text);background:none}
+.btn.ghost:hover{border-color:var(--green-line);background:var(--panel)}
+.nav .btn{padding:10px 16px;font-size:13.5px}
+.menu{display:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-10% -20% auto 30%;height:125%;background:radial-gradient(50% 45% at 62% 46%,rgba(169,242,39,.16),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(48px,8vh,96px) clamp(64px,10vh,120px)}
+h1{font:900 clamp(44px,5.4vw,78px)/.93 var(--display);letter-spacing:-.035em;margin:0 0 26px}
+h1 span{display:block;white-space:nowrap}
+h1 .go{color:var(--green)}
+.lede{font-size:clamp(18px,1.55vw,20.5px);line-height:1.5;color:var(--muted);max-width:31em;margin-bottom:28px}
+.lede b{color:var(--text);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.fine{font-size:14.5px;color:var(--muted);margin:18px 0 0;max-width:46em}
+
+/* hero visual: an editing timeline, with one Client Hunter post tucked under it */
+.visual{position:relative;min-width:0;padding-bottom:96px}
+.editor{background:#0d100c;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 40px 90px -40px rgba(169,242,39,.35)}
+.editor .top{display:flex;align-items:center;gap:6px;padding:11px 13px;border-bottom:1px solid var(--line)}
+.editor .top i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.editor .top i:first-child{background:var(--green)}
+.monitor{position:relative;aspect-ratio:16/8.4;background:#000 url("assets/og.jpg") center/cover}
+.monitor .tc{position:absolute;left:12px;bottom:10px;font:600 12.5px/1 var(--body);font-variant-numeric:tabular-nums;background:rgba(0,0,0,.62);padding:5px 8px;border-radius:6px}
+.tl{position:relative;display:grid;gap:6px;padding:13px 13px 15px;border-top:1px solid var(--line)}
+.trk{display:flex;gap:4px;height:22px}
+.trk b{display:block;border-radius:5px;background:var(--panel-2);box-shadow:inset 0 0 0 1px var(--line)}
+.trk .g{background:linear-gradient(90deg,var(--green),var(--lime));box-shadow:none}
+.trk .d{background:var(--green-deep);box-shadow:inset 0 0 0 1px var(--green-line)}
+.trk.a b{background:repeating-linear-gradient(90deg,rgba(169,242,39,.5) 0 2px,transparent 2px 5px) center/100% 62% no-repeat,var(--panel-2)}
+.playhead{position:absolute;top:7px;bottom:9px;left:22%;width:2px;border-radius:2px;background:#fff;animation:scrub 11s ease-in-out infinite alternate}
+.playhead::before{content:"";position:absolute;top:-3px;left:-4px;width:10px;height:7px;border-radius:2px;background:#fff}
+@keyframes scrub{to{left:84%}}
+.lead{background:var(--panel);border-radius:10px;border-left:4px solid var(--green);padding:13px 15px 14px;box-shadow:0 0 0 1px var(--line),0 18px 40px -18px #000}
+.lead .from{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
+.lead .from img{width:20px;height:20px;border-radius:6px}
+.lead .title{font-weight:700;font-size:15.5px;line-height:1.35;color:#8ec5ff;margin-bottom:4px}
+.lead .meta{font-size:13.5px;color:var(--muted)}
+.visual .lead{position:absolute;left:clamp(-26px,-2vw,-10px);bottom:0;width:min(330px,82%)}
+.visual .cap{position:absolute;right:0;bottom:6px;width:38%;font-size:13px;line-height:1.4;color:var(--muted);margin:0;text-align:right}
+
+/* ---------- sections ---------- */
+.sec{border-top:1px solid var(--line);scroll-margin-top:var(--nav-h)}
+.sec > .wrap{padding-block:clamp(64px,9vw,116px)}
+h2{font:900 clamp(32px,4.4vw,54px)/1 var(--display);letter-spacing:-.03em;margin:0 0 16px;text-wrap:balance}
+.intro{color:var(--muted);max-width:36em;margin-bottom:clamp(30px,4vw,50px);font-size:18px}
+h3{font:800 21px/1.2 var(--display);letter-spacing:-.015em;margin:0 0 8px}
+.status{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;border-radius:999px;padding:5px 11px;background:var(--panel-2);color:var(--muted);box-shadow:inset 0 0 0 1px var(--line);white-space:nowrap}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.status.now{color:var(--green);background:rgba(169,242,39,.1);box-shadow:inset 0 0 0 1px var(--green-line)}
+.status.now::before{background:var(--green)}
+.card{background:var(--panel);border-radius:18px;box-shadow:inset 0 0 0 1px var(--line);transition:transform .2s ease,box-shadow .2s ease}
+@media (hover:hover){.card:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--green-line)}}
+
+/* courses */
+.courses{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.course{grid-column:span 2;display:flex;flex-direction:column;padding:clamp(22px,2.6vw,30px)}
+.course:nth-child(n+4){grid-column:span 3}
+.course .head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--green-deep);box-shadow:inset 0 0 0 1px var(--green-line);color:var(--green)}
+.ico svg{width:28px;height:28px}
+.course h3{font-size:24px}
+.course .topic{color:var(--muted);margin-bottom:18px}
+.course .learn{font-size:14.5px;font-weight:700;margin:auto 0 10px;padding-top:6px}
+.course li{position:relative;padding:9px 0 9px 22px;border-top:1px solid var(--line);color:var(--muted);font-size:15.5px;line-height:1.45}
+.course li::before{content:"";position:absolute;left:0;top:1.02em;width:10px;height:6px;border-radius:2px;background:var(--green)}
+
+/* learning flow */
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));counter-reset:f;margin-bottom:clamp(36px,5vw,60px)}
+.flow li{counter-increment:f;position:relative;padding:22px 18px 0 0}
+.flow li::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--line)}
+.flow li::after{content:counter(f);position:absolute;left:0;top:-13px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:800 13px/1 var(--display);background:var(--green);color:#0a0b0a}
+.flow b{display:block;font:800 18px/1.2 var(--display);letter-spacing:-.01em;margin-bottom:6px}
+.flow span{color:var(--muted);font-size:15px;line-height:1.45;display:block}
+.pv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.chan{padding:0;overflow:hidden}
+.chan .name{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line);font-weight:700}
+.chan .name span:first-child::before{content:"# ";color:var(--muted)}
+.post{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;padding:16px 18px}
+.post + .post{border-top:1px solid var(--line)}
+.av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:800 13px/1 var(--display);background:var(--panel-2);color:var(--muted);overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
+.post .who{font-weight:700;font-size:15.5px;margin:0 0 4px}
+.post p{color:var(--muted);font-size:15.5px;line-height:1.5;margin:0 0 8px}
+.post p:last-child{margin:0}
+.vid{position:relative;aspect-ratio:16/9;border-radius:10px;margin:10px 0;background:repeating-linear-gradient(135deg,#151914 0 14px,#111410 14px 28px);box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center;color:var(--muted);font-size:13.5px;font-weight:600}
+.vid::before{content:"";width:0;height:0;border-left:22px solid var(--green);border-top:14px solid transparent;border-bottom:14px solid transparent;margin-bottom:34px}
+.vid span{position:absolute;bottom:14px}
+.file{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:8px 12px;border-radius:9px;background:var(--panel-2);box-shadow:inset 0 0 0 1px var(--line)}
+.file::before{content:"";width:10px;height:12px;border-radius:2px;background:var(--green)}
+.notes li{position:relative;padding:5px 0 5px 54px;color:var(--muted);font-size:15.5px}
+.notes b{position:absolute;left:0;color:var(--green);font-variant-numeric:tabular-nums;font-weight:700}
+
+/* community */
+.comm{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px);align-items:start}
+.dc{padding:18px 16px 14px}
+.dc .srv{display:flex;align-items:center;gap:10px;font-weight:700;padding:0 6px 14px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.dc .srv img{width:28px;height:28px;border-radius:8px}
+.dc .cat{font-size:12.5px;font-weight:700;color:var(--muted);margin:14px 6px 4px}
+.dc li{display:flex;align-items:center;gap:8px;padding:6px;border-radius:8px;font-weight:600;font-size:15.5px}
+.dc li::before{content:"#";color:var(--muted);font-weight:700;width:14px;text-align:center}
+.dc li em{margin-left:auto;font-style:normal;font-size:12px;font-weight:700;color:var(--green);background:rgba(169,242,39,.1);border-radius:6px;padding:2px 7px}
+.rooms > div{padding:22px 0;border-top:1px solid var(--line)}
+.rooms > div:first-child{border-top:0;padding-top:0}
+.rooms p{color:var(--muted);margin:0;max-width:34em}
+.rooms a{color:var(--green);text-underline-offset:3px}
+
+/* founder */
+.founder{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,6vw,80px);align-items:center}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--panel);box-shadow:0 0 0 1px var(--line)}
+.portrait > img{position:relative;width:100%;height:100%;object-fit:cover}
+.portrait .ph{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(55% 45% at 50% 50%,rgba(169,242,39,.16),transparent 70%)}
+.portrait .ph img{width:96px;height:96px;border-radius:24px}
+.founder p{color:var(--muted);max-width:36em}
+.founder p b{color:var(--text);font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:26px 0 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:18px 14px 18px 0}
+.facts div + div{border-left:1px solid var(--line);padding-left:18px}
+.facts b{display:block;font:900 clamp(28px,3.2vw,40px)/1 var(--display);letter-spacing:-.04em;color:var(--green);margin-bottom:6px}
+.facts span{color:var(--muted);font-size:14.5px}
+
+.work{display:grid;grid-template-columns:132px minmax(0,1fr);gap:22px;align-items:center}
+.work .thumb{position:relative;display:block;border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px var(--line);aspect-ratio:480/861}
+.work .thumb img{width:100%;height:100%;object-fit:cover}
+.work .play{position:absolute;inset:0;margin:auto;width:50px;height:50px;border-radius:50%;background:var(--green);display:grid;place-items:center;transition:transform .2s ease}
+.work .play::before{content:"";border-left:15px solid #0a0b0a;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+@media (hover:hover){.work .thumb:hover .play{transform:scale(1.08)}}
+.work p{margin-bottom:16px}
+.work p a{color:var(--green);text-underline-offset:3px}
+dialog.player{border:0;padding:14px;border-radius:18px;background:var(--panel);color:var(--text);box-shadow:0 0 0 1px var(--line),0 40px 100px #000;max-width:calc(100vw - 24px)}
+dialog.player::backdrop{background:rgba(0,0,0,.82)}
+dialog.player form{display:flex;justify-content:flex-end;margin-bottom:10px}
+dialog.player .btn{padding:9px 14px;font-size:13.5px}
+dialog.player .frame{height:min(74vh,700px);aspect-ratio:9/16;max-width:100%;background:#000;border-radius:10px;overflow:hidden}
+dialog.player iframe{width:100%;height:100%;border:0;display:block}
+
+/* membership */
+.tiers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
+.tier{display:flex;flex-direction:column;padding:clamp(24px,3vw,36px)}
+.tier.full{background:var(--green-deep);box-shadow:inset 0 0 0 1px var(--green-line)}
+.tier .who{font-size:15px;font-weight:600;color:var(--muted);margin:0 0 6px}
+.tier.full .who{color:var(--green)}
+.seats{align-self:flex-start;font-size:13.5px;font-weight:700;color:#0a0b0a;background:var(--green);border-radius:999px;padding:5px 11px;margin:0 0 14px}
+.price{font:900 clamp(40px,5vw,58px)/1 var(--display);letter-spacing:-.04em;margin:0 0 6px}
+.price small{font:600 16px/1 var(--body);letter-spacing:0;color:var(--muted)}
+.tier .sub{color:var(--muted);font-size:15.5px;margin-bottom:22px}
+.tier ul{margin:0 0 28px;display:grid}
+.tier li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid rgba(255,255,255,.08)}
+.tier .btn{margin-top:auto;align-self:flex-start}
+.pay{margin-top:18px;padding:clamp(22px,3vw,32px);display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(20px,4vw,56px)}
+.pay:hover{transform:none}
+.pay ol{counter-reset:p;display:grid;gap:12px}
+.pay li{counter-increment:p;position:relative;padding-left:38px;color:var(--muted)}
+.pay li::before{content:counter(p);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;font:800 13px/1 var(--display);background:var(--panel-2);box-shadow:inset 0 0 0 1px var(--line);color:var(--text)}
+.pay li b{color:var(--text);font-weight:600}
+
+.fit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,5vw,72px)}
+.fit li{position:relative;padding:13px 0 13px 32px;border-top:1px solid var(--line);color:var(--muted)}
+.fit li::before{content:"";position:absolute;left:0;top:17px;width:19px;height:19px;border-radius:6px;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M7 13.5l4 4 8-9' fill='none' stroke='%230a0b0a' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.fit .no li::before{background:var(--panel-2) linear-gradient(var(--muted),var(--muted)) center/9px 2px no-repeat;box-shadow:inset 0 0 0 1px var(--line)}
+
+.faq{max-width:800px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 0;font-weight:700;font-size:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:800 22px/1 var(--display);color:var(--green);flex:none}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{color:var(--muted);margin:0 0 22px;max-width:40em}
+
+.end{text-align:center;position:relative;overflow:hidden}
+.end::before{content:"";position:absolute;inset:auto 10% -60% 10%;height:120%;background:radial-gradient(50% 50% at 50% 50%,rgba(169,242,39,.14),transparent 70%);pointer-events:none}
+.end .wrap{position:relative}
+.end h2{font-size:clamp(36px,5.6vw,72px)}
+.end .intro{margin-inline:auto}
+.end .cta{justify-content:center}
+
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;padding-block:28px}
+footer .brand img{width:28px;height:28px;border-radius:8px}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer a{text-underline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .playhead{animation:none}
+  .card{transition:none}
+  .card:hover{transform:none}
+  .work .play{transition:none}
+}
+@media (max-width:1000px){
+  .links{display:none}
+  .menu{display:inline-flex;margin-left:auto;padding:10px 14px;font-size:13.5px}
+  .nav .btn.solid{margin-left:0}
+  .links.open{display:grid;position:absolute;left:0;right:0;top:var(--nav-h);margin:0;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:6px clamp(18px,4vw,44px) 14px}
+  .links.open a{padding:14px 0;border-top:1px solid var(--line);font-size:17px;color:var(--text)}
+  .links.open a:first-child{border-top:0}
+  .hero .wrap,.comm,.founder,.pay{grid-template-columns:1fr}
+  .courses{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .course,.course:nth-child(n+4){grid-column:auto}
+  .course:last-child{grid-column:1/-1}
+  .flow{grid-template-columns:1fr;gap:0;margin-left:13px}
+  .flow li{padding:0 0 24px 30px}
+  .flow li::before{left:0;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .flow li::after{left:-12px;top:-2px}
+  .flow li:last-child{padding-bottom:0}
+  .portrait{max-width:420px}
+}
+@media (max-width:720px){
+  body{font-size:16.5px}
+  .brand span{display:none}
+  .nav .btn.solid{padding:10px 13px}
+  h1 .go{display:inline}
+  h1 .go + .go::before{content:" "}
+  .courses,.tiers,.pv,.fit{grid-template-columns:1fr}
+  .course:last-child{grid-column:auto}
+  .hero .wrap{gap:26px;padding-block:30px 44px}
+  h1{margin-bottom:18px}
+  .lede{margin-bottom:22px}
+  .hero .fine{margin-top:14px}
+  .monitor{aspect-ratio:16/7}
+  .sec > .wrap{padding-block:56px}
+  .work{grid-template-columns:104px minmax(0,1fr);gap:16px}
+  .work .btn{white-space:normal;text-align:center;line-height:1.25;padding:12px 16px}
+  .visual{padding-bottom:0}
+  .visual .lead{position:static;width:auto;margin-top:12px}
+  .visual .cap{position:static;width:auto;text-align:left;margin-top:10px}
+  .facts b{font-size:26px}
+  .tier li{align-items:flex-start;flex-direction:column;gap:6px}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="" width="34" height="34"><b>EditLab</b><span>Academy</span></a>
+    <div class="links" id="links">
+      <a href="#courses">Courses</a>
+      <a href="#learning">How you learn</a>
+      <a href="#community">Community</a>
+      <a href="#founder">Susano</a>
+      <a href="#membership">Membership</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <button class="btn ghost menu" type="button" aria-expanded="false" aria-controls="links">Menu</button>
+    <a class="btn solid" href="https://discord.gg/F64h2gkaKh">Join the Discord</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1><span>Learn to edit.</span><span class="go">Get paid</span><span class="go">for it.</span></h1>
+      <p class="lede">EditLab is a video editing academy that lives on Discord. <b>Join free</b> for resources and help. Become a <b>Full Lab member</b> for the courses as they are released, feedback on your edits and a feed of paid editing job posts.</p>
+      <div class="cta">
+        <a class="btn solid" href="https://discord.gg/F64h2gkaKh">Join the Discord free</a>
+        <a class="btn ghost" href="#courses">See the courses</a>
+      </div>
+      <p class="fine">Free to join. No card needed.</p>
+    </div>
+
+    <div class="visual">
+      <div class="editor" role="img" aria-label="Illustration of a video editing timeline">
+        <div class="top"><i></i><i></i><i></i></div>
+        <div class="monitor"><span class="tc">00:00:12:16</span></div>
+        <div class="tl">
+          <div class="trk"><b style="flex:1.2"></b><b class="d" style="flex:2.2"></b><b style="flex:.8"></b><b class="d" style="flex:1.6"></b><b style="flex:2"></b></div>
+          <div class="trk"><b class="g" style="flex:2.4"></b><b class="g" style="flex:1.3"></b><b class="g" style="flex:3"></b><b class="g" style="flex:1.1"></b></div>
+          <div class="trk a"><b style="flex:3.7"></b><b style="flex:4.1"></b></div>
+          <span class="playhead"></span>
+        </div>
+      </div>
+      <div class="lead">
+        <div class="from"><img src="assets/logo.png" alt="" width="20" height="20">New Job Found</div>
+        <div class="title">[Hiring] Long-form YouTube editor, $150 per video</div>
+        <div class="meta">Reddit</div>
+      </div>
+      <p class="cap">Illustration. The Client Hunter post is an example.</p>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ======================= COURSES ======================= -->
+<section class="sec" id="courses">
+  <div class="wrap">
+    <h2>Five courses, built in the open</h2>
+    <p class="intro">Every course below is in production. Lessons are released to Full Lab members as each one is finished, and nothing here is marked ready before it is.</p>
+    <div class="courses">
+      <article class="card course">
+        <div class="head">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="7" width="9" height="5" rx="1.5"/><rect x="16" y="7" width="9" height="5" rx="1.5"/><rect x="3" y="16" width="14" height="5" rx="1.5"/><path d="M14 3v22"/></svg></span>
+          <span class="status">In production</span>
+        </div>
+        <h3>Premiere Pro</h3>
+        <p class="topic">Editing from an empty project to a finished video a client can publish.</p>
+        <p class="learn">You will learn to</p>
+        <ul>
+          <li>Set up and organise a project so the edit stays fast</li>
+          <li>Cut, pace and sound-design a full video</li>
+          <li>Export correctly for YouTube and short-form</li>
+        </ul>
+      </article>
+
+      <article class="card course">
+        <div class="head">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c5 0 6-14 18-14"/><path d="M5 18l3 3-3 3-3-3z" fill="currentColor"/><path d="M23 4l3 3-3 3-3-3z" fill="currentColor"/></svg></span>
+          <span class="status">In production</span>
+        </div>
+        <h3>After Effects</h3>
+        <p class="topic">Motion graphics for editors: text, captions and the effects clients ask for.</p>
+        <p class="learn">You will learn to</p>
+        <ul>
+          <li>Animate text, captions and simple graphics</li>
+          <li>Use keyframes and easing so motion feels smooth</li>
+          <li>Build reusable templates for client work</li>
+        </ul>
+      </article>
+
+      <article class="card course">
+        <div class="head">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M14 3l10 5.5v11L14 25 4 19.5v-11z"/><path d="M4 8.5L14 14l10-5.5M14 14v11"/></svg></span>
+          <span class="status">In production</span>
+        </div>
+        <h3>Blender</h3>
+        <p class="topic">3D for editors, for the shots that flat footage can't give you.</p>
+        <p class="learn">You will learn to</p>
+        <ul>
+          <li>Find your way around Blender as an editor</li>
+          <li>Build and light simple 3D scenes and product shots</li>
+          <li>Bring 3D renders into your edits</li>
+        </ul>
+      </article>
+
+      <article class="card course">
+        <div class="head">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h18a2 2 0 012 2v9a2 2 0 01-2 2h-9l-6 5v-5H5a2 2 0 01-2-2V8a2 2 0 012-2z"/><path d="M9 11h10M9 14.5h6"/></svg></span>
+          <span class="status">In production</span>
+        </div>
+        <h3>Getting Clients</h3>
+        <p class="topic">Where editing work is posted, and how to answer so people write back.</p>
+        <p class="learn">You will learn to</p>
+        <ul>
+          <li>Find paid editing work, including the Client Hunter feed</li>
+          <li>Write first messages that get replies</li>
+          <li>Turn a single video into repeat work</li>
+        </ul>
+      </article>
+
+      <article class="card course">
+        <div class="head">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h10l10 10-10 10L4 14z"/><circle cx="9.5" cy="9.5" r="1.8" fill="currentColor" stroke="none"/></svg></span>
+          <span class="status">In production</span>
+        </div>
+        <h3>Pricing and Personal Branding</h3>
+        <p class="topic">What to charge, and how to present your work so the right clients find you.</p>
+        <p class="learn">You will learn to</p>
+        <ul>
+          <li>Set your rates and state them with confidence</li>
+          <li>Build a portfolio around the jobs you want</li>
+          <li>Present yourself so clients remember you</li>
+        </ul>
+      </article>
+    </div>
+    <p class="fine">Already available: the <a href="https://susanovisual.github.io/editing-dm-guide/">Editing DM Guide</a>, a free written guide on answering job posts and closing the deal.</p>
+  </div>
+</section>
+
+<!-- ======================= LEARNING ======================= -->
+<section class="sec" id="learning">
+  <div class="wrap">
+    <h2>How you learn here</h2>
+    <p class="intro">Watching tutorials doesn't make an editor. Finishing edits and having them reviewed does, so every lesson is built around that loop.</p>
+    <ol class="flow">
+      <li><b>Watch</b><span>One lesson, one skill.</span></li>
+      <li><b>Practice</b><span>Use the project files to repeat it yourself.</span></li>
+      <li><b>Submit</b><span>Post your edit in the feedback channel.</span></li>
+      <li><b>Get feedback</b><span>Notes on what works and what to fix.</span></li>
+      <li><b>Improve</b><span>Apply the notes and post the new cut.</span></li>
+    </ol>
+
+    <div class="pv" aria-label="Preview of a lesson and a feedback thread">
+      <div class="card chan">
+        <div class="name"><span>full-course</span><span class="status">Preview</span></div>
+        <div class="post">
+          <span class="av"><img src="assets/logo.png" alt="" width="36" height="36"></span>
+          <div>
+            <p class="who">EditLab</p>
+            <p>Lesson: pacing a talking-head video.</p>
+            <div class="vid"><span>Lesson video, in production</span></div>
+            <p><span class="file">Project files</span></p>
+            <p>Your task: cut the raw clip down to 60 seconds and post it for feedback.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card chan">
+        <div class="name"><span>pro-feedback</span><span class="status">Preview</span></div>
+        <div class="post">
+          <span class="av">M</span>
+          <div>
+            <p class="who">Member</p>
+            <p>Here's my 60-second cut from the pacing lesson.</p>
+          </div>
+        </div>
+        <div class="post">
+          <span class="av">S</span>
+          <div>
+            <p class="who">Susano</p>
+            <p>Good first pass. Three things to change:</p>
+            <ul class="notes">
+              <li><b>0:04</b>Start on the second sentence, it's a stronger hook.</li>
+              <li><b>0:21</b>Cut the pause before the answer.</li>
+              <li><b>0:48</b>Bring the music down under the last line.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="fine">Preview only. This shows how a lesson and a feedback thread are planned to look inside Discord. The lesson, files and messages above are illustrations, and lesson videos and project files are still in production. Feedback from Susano in #pro-feedback is open to Full Lab members now.</p>
+  </div>
+</section>
+
+<!-- ======================= COMMUNITY ======================= -->
+<section class="sec" id="community">
+  <div class="wrap">
+    <h2>Inside the Discord</h2>
+    <p class="intro">Everything happens in one server. These are its real channels, grouped the way you will see them.</p>
+    <div class="comm">
+      <div class="card dc" aria-label="EditLab channel list">
+        <div class="srv"><img src="assets/logo.png" alt="" width="28" height="28">EditLab</div>
+        <ul>
+          <li>unlock-full-access</li>
+        </ul>
+        <p class="cat">Start</p>
+        <ul><li>rules</li><li>welcome</li></ul>
+        <p class="cat">Updates</p>
+        <ul><li>announcements</li><li>editing-news</li></ul>
+        <p class="cat">Resources and help</p>
+        <ul><li>free-resources</li><li>plugin-help</li></ul>
+        <p class="cat">Full Lab</p>
+        <ul><li>academy-access<em>Full Lab</em></li><li>full-course<em>Full Lab</em></li><li>pro-feedback<em>Full Lab</em></li><li>client-hunter<em>Full Lab</em></li><li>full-lab-support<em>Full Lab</em></li></ul>
+      </div>
+      <div class="rooms">
+        <div>
+          <h3>Start and stay up to date</h3>
+          <p>#welcome and #rules get you oriented. #announcements carries server news, and #editing-news follows new tools and updates in the editing world.</p>
+        </div>
+        <div>
+          <h3>Resources and help</h3>
+          <p>#free-resources holds free assets for your edits. When a plugin or project breaks, ask in #plugin-help.</p>
+        </div>
+        <div>
+          <h3>Course and feedback</h3>
+          <p>Lessons are released in #full-course. In #pro-feedback you post an edit and Susano replies with notes. #academy-access explains where everything is, and #full-lab-support is for membership questions.</p>
+        </div>
+        <div>
+          <h3>Client Hunter</h3>
+          <p>Client Hunter checks Reddit and five remote job boards for paid editing jobs and posts new listings in #client-hunter. How many appear depends on what clients publish, so some days are quiet. The free <a href="https://susanovisual.github.io/editing-dm-guide/">Editing DM Guide</a> shows how to answer them.</p>
+        </div>
+      </div>
+    </div>
+    <p class="fine">Channel names as of November 2026. The list is simplified and the server may change as it grows.</p>
+  </div>
+</section>
+
+<!-- ======================= FOUNDER ======================= -->
+<section class="sec" id="founder">
+  <div class="wrap founder">
+    <div class="portrait">
+      <span class="ph" aria-hidden="true"><img src="assets/logo.png" alt="" width="96" height="96"></span>
+      <img src="assets/susano.jpg" alt="Susano, video editor and founder of EditLab" width="800" height="1000" loading="lazy" decoding="async" onerror="this.remove()">
+    </div>
+    <div>
+      <h2>Who you learn from</h2>
+      <p><b>Susano</b> is a freelance video editor and colorist. He works in Premiere Pro, After Effects, DaVinci Resolve and Blender, across short-form, promo and cinematic content, and the courses are built from the workflow he uses on client projects.</p>
+      <p>He also founded Editing Community, a large Discord server for editors. EditLab is the smaller, focused room for people who want to learn properly and get paid work.</p>
+      <div class="facts">
+        <div><b>8+</b><span>years editing</span></div>
+        <div><b>20K+</b><span>editor community</span></div>
+      </div>
+      <div class="work">
+        <a class="thumb" href="https://vimeo.com/1247079971" data-vimeo="1247079971" aria-label="Play the Matador AI video">
+          <img src="assets/matador-poster.jpg" alt="Frame from the Matador AI edit" width="480" height="861" loading="lazy" decoding="async">
+          <span class="play" aria-hidden="true"></span>
+        </a>
+        <div>
+          <h3>Matador AI</h3>
+          <p>A short-form edit by Susano, 54 seconds. Press play to watch it here, or <a href="https://vimeo.com/1247079971">open it on Vimeo</a>.</p>
+          <a class="btn ghost" href="https://susanovisual.com">See more at susanovisual.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= MEMBERSHIP ======================= -->
+<section class="sec" id="membership">
+  <div class="wrap">
+    <h2>Free, or Full Lab</h2>
+    <p class="intro">Start free. Move up when you want feedback, the job feed and the courses. Each line shows whether it is available today.</p>
+    <div class="tiers">
+      <div class="card tier">
+        <p class="who">Free member</p>
+        <p class="price">€0</p>
+        <p class="sub">For as long as you like.</p>
+        <ul>
+          <li>Access to the Discord server<span class="status now">Now</span></li>
+          <li>Free editing resources<span class="status now">Now</span></li>
+          <li>Help with plugins and software<span class="status now">Now</span></li>
+          <li>Editing news and updates<span class="status now">Now</span></li>
+          <li>The Editing DM Guide<span class="status now">Now</span></li>
+        </ul>
+        <a class="btn ghost" href="https://discord.gg/F64h2gkaKh">Join the Discord free</a>
+      </div>
+      <div class="card tier full">
+        <p class="seats">Founding price: first 20 members</p>
+        <p class="who">Full Lab member</p>
+        <p class="price">€29 <small>per month</small></p>
+        <p class="sub">With code <b>FOUNDING40</b> at checkout. Kept for as long as your subscription stays active. The regular price is €69 per month.</p>
+        <ul>
+          <li>Everything in free<span class="status now">Now</span></li>
+          <li>Feedback on your edits from Susano<span class="status now">Now</span></li>
+          <li>Client Hunter feed of paid job posts<span class="status now">Now</span></li>
+          <li>All five courses<span class="status">In production</span></li>
+          <li>Project files for lessons<span class="status">In production</span></li>
+        </ul>
+        <a class="btn solid" href="https://whop.com/checkout/plan_yFOUX2flfbL73/">Join Full Lab</a>
+      </div>
+    </div>
+
+    <div class="card pay">
+      <div>
+        <h3>How joining Full Lab works</h3>
+        <p class="fine" style="margin:0">Payment runs through Whop. Your Discord access is added automatically.</p>
+      </div>
+      <ol>
+        <li><b>Pay on Whop.</b> Press Join Full Lab and pay by card. Founding members enter FOUNDING40.</li>
+        <li><b>Connect Discord.</b> After paying, Whop shows a Discord page. Press Connect Account and pick your Discord account.</li>
+        <li><b>Open Full Lab.</b> Your Full Lab Member role is added and the private channels appear in the EditLab server.</li>
+      </ol>
+    </div>
+    <p class="fine">Cancel anytime in your Whop account. Access runs until the end of the period you paid for. A question or a problem with payment? Message Susano on Discord.</p>
+  </div>
+</section>
+
+<section class="sec" id="fit">
+  <div class="wrap">
+    <h2>Is it for you?</h2>
+    <p class="intro">Better to know before you join.</p>
+    <div class="fit">
+      <div>
+        <h3>A good fit if you</h3>
+        <ul>
+          <li>Want to earn from editing, not only learn effects</li>
+          <li>Are starting out, or stuck without steady clients</li>
+          <li>Will post your work and act on the feedback</li>
+          <li>Are fine joining early, while the courses are still being made</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h3>Not a fit if you</h3>
+        <ul>
+          <li>Want a finished course library today</li>
+          <li>Expect clients or income to be guaranteed</li>
+          <li>Only want free plugins and nothing else</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Are the courses finished?</summary>
+        <p>No. All five are in production, and lessons are released as each one is done. That is why the first 20 members get the founding price.</p>
+      </details>
+      <details>
+        <summary>What do I get today if I become a Full Lab member?</summary>
+        <p>Feedback on your edits from Susano, the Client Hunter feed, and every lesson from the day it is released.</p>
+      </details>
+      <details>
+        <summary>Do I need experience?</summary>
+        <p>No. Join free, look around and ask questions. The courses are planned to start from an empty project.</p>
+      </details>
+      <details>
+        <summary>Will Client Hunter get me a job?</summary>
+        <p>It shows you paid job posts in one place. It can't promise how many appear or that you get hired. That part is your message and your work.</p>
+      </details>
+      <details>
+        <summary>How do I pay for Full Lab?</summary>
+        <p>Press <a href="https://whop.com/checkout/plan_yFOUX2flfbL73/">Join Full Lab</a> and pay by card on Whop. Then press Connect Account on the Discord page Whop shows you, and the Full Lab channels unlock. If anything goes wrong, message Susano on Discord.</p>
+      </details>
+      <details>
+        <summary>Can I cancel?</summary>
+        <p>Yes, anytime, from your Whop account. Your access runs until the end of the period you paid for.</p>
+      </details>
+      <details>
+        <summary>What language is it in?</summary>
+        <p>English. The server, the lessons and the guide are all in English.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sec end">
+  <div class="wrap">
+    <h2>Come in and look around</h2>
+    <p class="intro">Joining is free, and you can leave whenever you like.</p>
+    <div class="cta"><a class="btn solid" href="https://discord.gg/F64h2gkaKh">Join the Discord free</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand"><img src="assets/logo.png" alt="" width="28" height="28"><b>EditLab</b><span>Academy</span></span>
+    <nav aria-label="Footer">
+      <a href="https://susanovisual.github.io/editing-dm-guide/">Editing DM Guide</a>
+      <a href="https://discord.gg/F64h2gkaKh">Discord</a>
+      <a href="https://susanovisual.com">susanovisual.com</a>
+    </nav>
+  </div>
+</footer>
+
+<dialog class="player" id="player" aria-label="Matador AI video">
+  <form method="dialog"><button class="btn ghost" type="submit">Close</button></form>
+  <div class="frame"></div>
+</dialog>
+
+<script>
+// Work sample: the Vimeo player is only loaded when someone presses play,
+// and it never starts on its own. Without JavaScript the link opens Vimeo.
+(function () {
+  var dlg = document.getElementById('player');
+  var link = document.querySelector('[data-vimeo]');
+  if (!dlg || !link || typeof dlg.showModal !== 'function') return;
+  var frame = dlg.querySelector('.frame');
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    var f = document.createElement('iframe');
+    f.src = 'https://player.vimeo.com/video/' + link.getAttribute('data-vimeo') + '?title=0&byline=0&portrait=0&dnt=1';
+    f.title = 'Matador AI, edited by Susano';
+    f.allow = 'fullscreen; picture-in-picture';
+    f.allowFullscreen = true;
+    frame.appendChild(f);
+    dlg.showModal();
+  });
+  dlg.addEventListener('close', function () { frame.textContent = ''; link.focus(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+})();
+
+// Mobile menu: one button that opens and closes the section links.
+(function () {
+  var btn = document.querySelector('.menu');
+  var links = document.getElementById('links');
+  function set(open) {
+    links.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.textContent = open ? 'Close' : 'Menu';
+  }
+  btn.addEventListener('click', function () { set(!links.classList.contains('open')); });
+  links.addEventListener('click', function (e) { if (e.target.tagName === 'A') set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+})();
+</script>
+</body>
+</html>
